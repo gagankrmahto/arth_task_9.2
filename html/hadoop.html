@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Favicon and title -->
+    <link rel="icon" href="path/to/fav.png">
+    <title>Hadoop WebUI</title>
+
+    <!-- Halfmoon CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
+    <!--
+    Or,
+    Use the following (no variables, supports IE11):
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon.min.css" rel="stylesheet" />
+    Learn more: https://www.gethalfmoon.com/docs/customize/#notes-on-browser-compatibility
+  -->
+</head>
+
+<body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true"
+    data-sidebar-shortcut-enabled="true" data-set-preferred-mode-onload="true">
+    <!-- Modals go here -->
+    <!-- Reference: https://www.gethalfmoon.com/docs/modal -->
+
+    <!-- Page wrapper start -->
+    <div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-sm-and-down">
+
+        <!-- Sticky alerts (toasts), empty container -->
+        <!-- Reference: https://www.gethalfmoon.com/docs/sticky-alerts-toasts -->
+        <div class="sticky-alerts"></div>
+
+        <!-- Navbar start -->
+
+        <!-- Navbar end -->
+
+        <!-- Sidebar overlay -->
+        <!-- <div class="sidebar" onclick="halfmoon.toggleSidebar()"></div> -->
+
+        <!-- Sidebar start -->
+        <div class="sidebar">
+            <!-- Reference: https://www.gethalfmoon.com/docs/sidebar -->
+            <!-- Page wrapper with .with-sidebar class -->
+            <div class="page-wrapper with-sidebar">
+                <!-- Sidebar (immediate child of the page wrapper) -->
+                <div class="sidebar">
+                    <div class="sidebar-menu">
+                        <!-- Sidebar brand -->
+                        <a href="#" class="sidebar-brand">
+                            <!-- <img src="..." alt="..."> -->
+                            Hadoop
+                        </a>
+                        <!-- Sidebar content with the search box -->
+                        <!-- Sidebar links and titles -->
+                        <h5 class="sidebar-title">Getting started</h5>
+                        <div class="sidebar-divider"></div>
+                        <a href="#" class="sidebar-link active">Installation</a>
+                        <a href="#" class="sidebar-link">Setup Hadooop</a>
+                        <br />
+                        <h5 class="sidebar-title"></h5>
+                        <div class="sidebar-divider"></div>
+                        <a href="#" class="sidebar-link">Setup Namenode</a>
+                        <a href="#" class="sidebar-link">Setup DataNode</a>
+                        <a href="#" class="sidebar-link">Attach Storage</a>
+                        <a href="#" class="sidebar-link">Go to Web UI</a>
+                    </div>
+                </div>
+
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    ...
+                </div>
+            </div>
+        </div>
+        <!-- Sidebar end -->
+
+        <!-- Content wrapper start -->
+        <div class="content-wrapper">
+            <!--
+        Add your page's main content here
+        Examples:
+        1. https://www.gethalfmoon.com/docs/content-and-cards/#building-a-page
+        2. https://www.gethalfmoon.com/docs/grid-system/#building-a-dashboard
+      -->
+            <!-- Horizontally stacked switches -->
+            <!-- First card -->
+            <div class="card">
+                <h2 class="card-title">
+                    Welcome to Hadoop WebUI
+                </h2>
+                <p>
+                    This is th Web UI for hadoop where you can install hadoop in the host
+                </p>
+                <form action="/cgi-bin/hadoop.py" method="get" class="w-400 mw-full">
+                    <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                    <!-- Input -->
+                    <div class="form-group">
+                        <label for="full-name" class="required">Enter your master IP</label>
+                        <input type="text" class="form-control" id="full-name" placeholder="ip address"
+                            required="required">
+                    </div>
+                    <button type="submit">See the full report </button>
+                </form>
+                <div class="text-right">
+                    <!-- text-right = text-align: right -->
+                    <a href="#" class="btn">Read more</a>
+                </div>
+            </div>
+
+            <!-- Second card (parent container's width changed using utility classes) -->
+            <div class="w-450 mw-full">
+                <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                <div class="card">
+                    <h1 class="card-title">
+                        Configure Hadoop Namenode
+                    </h1>
+                    <form action="/cgi-bin/hadoop.py" method="get" class="w-400 mw-full">
+                        <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                        <!-- Input -->
+                        <div class="custom-switch d-inline-block form-group">
+                            <input type="checkbox" id="install" value="on" name="hadoopInstall">
+                            <label for="install">Install hadoop and required softwares </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="full-name" class="required">Enter your namenode IP</label>
+                            <input type="text" name="nameNodeConfigIP"class="form-control" id="full-name" placeholder="ip address"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="nameNodePass" class="required">Enter ssh password</label>
+                            <input type="password" name="nameNodePass" class="form-control" id="confirm-password" placeholder="password of datanode" required="required">
+
+                          </div>
+                    
+                        <div class="form-group">
+                            <label for="directory" class="required">Enter directory name</label>
+                            <input type="text" name="nameNodeDir" class="form-control" id="namenodeDir" placeholder="directory of namenode" required="required">
+                        </div>
+                        <button type="submit">Setup Namenode</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <h1 class="card-title">
+                        Configure Hadoop DataNode
+                    </h1>
+                    <form action="/cgi-bin/hadoop.py" method="get" class="w-400 mw-full">
+                        <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                        <!-- Input -->
+                        <div class="custom-switch d-inline-block form-group">
+                            <input type="checkbox" id="install" value="on" name="hadoopInstall">
+                            <label for="install">Install hadoop and required softwares </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="full-name" class="required">Enter your IP</label>
+                            <input type="text" name="dataNodeConfigIP"  class="form-control" id="full-name" placeholder="ip address"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="dataNodePass" class="required">Enter ssh password</label>
+                            <input type="password" name="dataNodePass" class="form-control" placeholder="password of namenode" required="required">
+                            
+                          </div>
+                        <div class="form-group">
+                            <label for="full-name" class="required">Enter your namenode IP</label>
+                            <input type="text" name="nameNodeIP" class="form-control" id="full-name" placeholder="ip address"
+                                required="required">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="directory" class="required">Enter directory name to share storage</label>
+                            <input type="text" name="dataNodeDir" class="form-control" id="namenodeDir" placeholder="directory of datanode" required="required">
+                        </div>
+                        <button type="submit">Setup Datanode</button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Content wrapper end -->
+
+    </div>
+    <!-- Page wrapper end -->
+
+    <!-- Halfmoon JS -->
+    <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+</body>
+
+</html>

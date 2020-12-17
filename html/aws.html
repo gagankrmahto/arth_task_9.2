@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" class="auto-scaling-disabled">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Favicon and title -->
+    <link rel="icon" href="path/to/fav.png">
+    <title>iSmart WebUI</title>
+
+    <!-- Halfmoon CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
+    <!--
+    Or,
+    Use the following (no variables, supports IE11):
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon.min.css" rel="stylesheet" />
+    Learn more: https://www.gethalfmoon.com/docs/customize/#notes-on-browser-compatibility
+  -->
+</head>
+
+<body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true"
+    data-sidebar-shortcut-enabled="true" data-set-preferred-mode-onload="true">
+    <!-- Modals go here -->
+    <!-- Reference: https://www.gethalfmoon.com/docs/modal -->
+
+    <!-- Page wrapper start -->
+    <div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-sm-and-down">
+
+
+
+
+        <!-- Sidebar start -->
+        <div class="sidebar">
+            <!-- Reference: https://www.gethalfmoon.com/docs/sidebar -->
+            <!-- Page wrapper with .with-sidebar class -->
+            <div class="page-wrapper with-sidebar">
+                <!-- Sidebar (immediate child of the page wrapper) -->
+                <div class="sidebar">
+                    <div class="sidebar-menu">
+                        <!-- Sidebar brand -->
+                        <a href="#" class="sidebar-brand">
+                            AWS WebUI
+                        </a>
+                        <!-- Sidebar content with the search box -->
+                        <div class="sidebar-content">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <div class="mt-10 font-size-12">
+                                <!-- mt-10 = margin-top: 1rem (10px), font-size-12 = font-size: 1.2rem (12px) -->
+                                Press <kbd>/</kbd> to focus
+                            </div>
+                        </div>
+                        <!-- Sidebar links and titles -->
+                        <h5 class="sidebar-title">Getting started</h5>
+                        <div class="sidebar-divider"></div>
+                        <a href="#" class="sidebar-link active">Installation</a>
+                        <a href="#" class="sidebar-link">CLI commands</a>
+                    </div>
+                </div>
+
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    ...
+                </div>
+            </div>
+        </div>
+        <!-- Sidebar end -->
+
+        <!-- Content wrapper start -->
+        <div class="content-wrapper">
+
+            <div class="card">
+                <h2 class="card-title">
+                    AWS webUI
+                </h2>
+                <p>
+                    This is the AWS webUI and will do all the sort of config part
+                </p>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <h2 class="card-title">
+                                Configure AWS with your CLI credentials
+                            </h2>
+                            <form action="/cgi-bin/aws.py" method="get">
+                                <!-- First row -->
+                                <div class="form-row row-eq-spacing-sm">
+                                    <div class="col-sm-4">
+                                        <label for="first-name" class="required">Enter Access Key ID</label>
+                                        <input type="text" class="form-control" id="first-name" name="awsID"
+                                            placeholder="****************R2WC" required="required">
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label for="last-name">Enter Secret Access Key</label>
+                                        <input type="text" class="form-control" required="required" id="last-name" name="awsKey"
+                                            placeholder="****************R2WC">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="last-name">Default Region</label>
+                                        <input type="text" class="form-control" id="last-name" name="awsRegion"
+                                            placeholder="ap-south-1"required="required">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="last-name">Output format</label>
+                                        <input type="text" class="form-control" id="last-name" name="awsOutput" placeholder="json" required="required">
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" type="submit" name="btn"
+                                    value="awsConfig">Configure AWS</button><br><br>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Second card (parent container's width changed using utility classes) -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <h2 class="card-title">
+                                Add inbound rules to the security group
+                            </h2>
+                            <form action="/cgi-bin/aws.py" method="get" class="w-400 mw-full">
+                                <div class="form-group">
+                                    <label for="addInboundRules" class="required">Enter the SG name to add
+                                        rules</label>
+                                    <input type="text" name="addInboundRules" class="form-control"
+                                        placeholder="Security group name" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="required">Enter the Protocol</label>
+                                    <input type="text" name="addInboundRulesProtocol" class="form-control"
+                                        placeholder="Add protocol for the inbound rules" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="required">Enter the Port Number to allow</label>
+                                    <input type="text" name="addInboundRulesPort" class="form-control"
+                                        placeholder="port number" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="required">Enter the IP Address to allow</label>
+                                    <input type="text" name="addInboundRulesIPRange" class="form-control"
+                                        placeholder="Enter the IP Address to allow" required="required">
+                                </div>
+                                <button type="submit" class="btn btn-primary" type="submit" name="btn"
+                                    value="addInboundRules">Create new inbound rules</button>
+                            </form>
+
+
+                        </div>
+
+                    </div>
+                    <div class="col">
+
+                        <div class="card">
+                            <h2 class="card-title">
+                                Create key-pair
+                            </h2>
+                            <form action="/cgi-bin/aws.py" method="get" class="w-400 mw-full">
+                                <div class="form-group">
+                                    <label for="createKeyName" class="required">Enter new key name</label>
+                                    <input type="text" name="createKeyName" class="form-control" id="createKeyName"
+                                        placeholder="keyName" required="required">
+                                </div>
+                                <button class="btn btn-primary" type="submit" name="btn" value="createKeyButton">Create
+                                    Key pair</button><br><br>
+                                <button class="btn btn-primary" type="submit" name="btn" value="descKeyPair">Show Key
+                                    pair</button>
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="card">
+                            <h2 class="card-title">
+                                Create new security group
+                            </h2>
+                            <form action="/cgi-bin/aws.py" method="get" class="w-400 mw-full">
+                                <div class="form-group">
+                                    <label for="createKeyName" class="required">Enter the security group
+                                        name</label>
+                                    <input type="text" name="createSecurityGroup" class="form-control"
+                                        id="createKeyName" placeholder="New Security group name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="createKeyName" class="required">Enter the security group
+                                        Description</label>
+                                    <input type="text" name="createSecurityGroupDesc" class="form-control"
+                                        id="createKeyName" placeholder="New Security group Description">
+                                </div>
+                                <button class="btn btn-primary" name="btn" value="createSG">Create Security
+                                    group</button><br><br>
+                                <button class="btn btn-primary" name="btn" value="showSG">Show Security groups</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <h2 class="card-title">
+                                Launch an EC2 instance
+                            </h2>
+                            <form action="/cgi-bin/aws.py" method="GET" class="w-400 mw-full">
+                                <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                                <!-- Input -->
+                                <div class="form-group">
+                                    <label for="area-of-specialization" class="required">Select an AMI Id</label>
+                                    <select class="form-control" name="amiID" id="area-of-specialization"
+                                        required="required">
+                                        <option value="" selected="selected" disabled="disabled"></option>
+                                        <option value="ami-08f63db601b82ff5f ">Amazon AMI 2</option>
+                                        <option value="ami-0a9d27a9f4f5c0efc">Rehat8 Linux</option>
+                                        <option value="ami-0a4a70bd98c6d6441">Ubuntu</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="osName" class="required">Name the new instance</label>
+                                    <input type="text" name="osName" class="form-control" id="full-name" placeholder=""
+                                        required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="osName" class="required">Give availability zone</label>
+                                    <input type="text" name="availabilityZone" class="form-control" id="full-name"
+                                        placeholder="" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="osName" class="required">Select instance type</label>
+                                    <select class="form-control" name="osType" id="area-of-specialization"
+                                        required="required">
+                                        <option value="" selected="selected" disabled="disabled"></option>
+                                        <option value="t2.micro">t2.micro</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="keyName">Enter the key name to be associated with the new
+                                        instance</label>
+                                    <input type="text" name="keyName" class="form-control" id="" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="securityGroup">Provide a security group name</label>
+                                    <input type="text" name="securityGroup" class="form-control" id=""
+                                        required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="subnetID">Enter a subnet ID</label>
+                                    <input type="text" name="subnetID" class="form-control" id="" required="required">
+                                </div>
+                                <button class="btn btn-primary" name="btn" value="launchInstance" type="submit">Launch a
+                                    new instance</button>
+                            </form>
+                            <!-- <div class="text-right">
+                                <!-- text-right = text-align: right -->
+                            <!-- <a href="#" class="btn">Read more</a> -->
+                            <!-- </div> -->
+                        </div>
+
+
+                    </div>
+                    <div class="col">
+
+                        <div class="card">
+                            <h2 class="card-title">
+                                Create An EBS volume
+                            </h2>
+                            <form action="/cgi-bin/aws.py" method="get" class="w-400 mw-full">
+                                <div class="form-group">
+                                    <label for="createNewEBS" class="required">Enter the AZ </label>
+                                    <input type="text" name="createNewEbsAZ" class="form-control"
+                                        placeholder="Enter availability zone" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="required">Enter the size of EBS in GB</label>
+                                    <input type="text" name="createNewEbsSize" class="form-control"
+                                        placeholder="Enter the size of EBS in GB" required="required">
+                                </div>
+                                <button type="submit" class="btn btn-primary" name="btn" value="newEBS">Create New
+                                    EBS</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="card">
+                            <h2 class="card-title">
+                                Attach the EBS volume to an instance
+                            </h2>
+                            <form action="/cgi-bin/aws.py" method="get" class="w-400 mw-full">
+                                <div class="form-group">
+                                    <label for="createNewEBS" class="required">Enter volume ID</label>
+                                    <input type="text" name="attachEbsVolId" class="form-control"
+                                        placeholder="Volume ID" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="required">Enter the instance ID</label>
+                                    <input type="text" name="attachEbsInsID" class="form-control"
+                                        placeholder="Instance ID" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="required">Give the name of device</label>
+                                    <input type="text" name="attachNewEbsDevName" class="form-control"
+                                        placeholder="attachNewEbsDevName" required="required">
+                                </div>
+                                <button type="submit" class="btn btn-primary" name="btn" value="attachEBS">Attach
+                                    EBS</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Content wrapper end -->
+
+    </div>
+    <!-- Page wrapper end -->
+
+    <!-- Halfmoon JS -->
+    <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+</body>
+
+</html>

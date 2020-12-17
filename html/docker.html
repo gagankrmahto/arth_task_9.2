@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" class="auto-scaling-disabled">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Favicon and title -->
+    <link rel="icon" href="path/to/fav.png">
+    <title>Docker webUI</title>
+
+    <!-- Halfmoon CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
+    <!--
+    Or,
+    Use the following (no variables, supports IE11):
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon.min.css" rel="stylesheet" />
+    Learn more: https://www.gethalfmoon.com/docs/customize/#notes-on-browser-compatibility
+  -->
+</head>
+
+<body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true"
+    data-sidebar-shortcut-enabled="true" data-set-preferred-mode-onload="true">
+    <!-- Modals go here -->
+    <!-- Reference: https://www.gethalfmoon.com/docs/modal -->
+
+    <!-- Page wrapper start -->
+    <div class="page-wrapper with-sidebar">
+
+        <!-- Sticky alerts (toasts), empty container -->
+        <!-- Reference: https://www.gethalfmoon.com/docs/sticky-alerts-toasts -->
+        <div class="sticky-alerts"></div>
+
+        <!-- Sidebar start -->
+        <div class="sidebar">
+            <!-- Reference: https://www.gethalfmoon.com/docs/sidebar -->
+            <div class="page-wrapper with-sidebar">
+                <!-- Sidebar (immediate child of the page wrapper) -->
+                <div class="sidebar">
+                    <div class="sidebar-menu">
+                        <!-- Sidebar brand -->
+                        <a href="#" class="sidebar-brand">
+                            Docker WebUI
+                        </a>
+                        <!-- Sidebar content with the search box -->
+                        <div class="sidebar-content">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <div class="mt-10 font-size-12">
+                                <!-- mt-10 = margin-top: 1rem (10px), font-size-12 = font-size: 1.2rem (12px) -->
+                            </div>
+                        </div>
+                        <!-- Sidebar links and titles -->
+                        <h5 class="sidebar-title">Getting started</h5>
+                        <div class="sidebar-divider"></div>
+                        <a href="#" class="sidebar-link active">Installation</a>
+                        <a href="#" class="sidebar-link">CLI commands</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sidebar end -->
+
+        <!-- Content wrapper start -->
+        <div class="content-wrapper">
+            <!--
+        Add your page's main content here
+        Examples:
+        1. https://www.gethalfmoon.com/docs/content-and-cards/#building-a-page
+        2. https://www.gethalfmoon.com/docs/grid-system/#building-a-dashboard
+      -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+
+                        <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                        <div class="card">
+                            <h2 class="card-title">
+                                Install and configure docker
+                            </h2>
+                            <form action="/cgi-bin/docker.py" method="get" class="w-400 mw-full">
+                                <button class="btn btn-primary" name="btn" value="installDocker" type="submit">Configure Docker</button>
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="col">
+
+                        <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                        <div class="card">
+                            <h2 class="card-title">
+                                Make your service permanent
+                            </h2>
+                            <form action="/cgi-bin/docker.py" method="get" class="w-400 mw-full">
+                                <button class="btn btn-primary" name="btn" value="enableDocker" type="submit">Enable the Docker Service</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col">
+                        
+                        <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                        <div class="card">
+                            <h2 class="card-title">
+                                See the status
+                            </h2>
+                            <form action="/cgi-bin/docker.py" method="get" class="w-400 mw-full">
+                                <input class="btn btn-primary" type="submit" value="See status report">
+                                <button class="btn btn-primary" name="btn" value="dockerStatus" type="submit">See Docker Status</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col">
+                        <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                        <div class="card">
+                            <h2 class="card-title">
+                                See all docker images
+                            </h2>
+                            <form action="/cgi-bin/docker.py" method="get" class="w-400 mw-full">
+                                <button class="btn btn-primary" name="btn" value="dockerImages" type="submit">See Docker Images</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                        <div class=" card">
+                            <h2 class="card-title">
+                                Display All Containers
+                            </h2>
+                            <form action="/cgi-bin/docker.py" method="get" class="w-400 mw-full">
+                                <button class="btn btn-primary" name="btn" value="dockerContainers" type="submit">Display</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                        <div class="card">
+                            <h2 class="card-title">
+                                Display all running containers
+                            </h2>
+                            <form action="/cgi-bin/docker.py" method="get" class="w-400 mw-full">
+                                <button class="btn btn-primary" name="btn" value="dockerRunningContainers" type="submit">Display</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="row">
+                    
+                    <div class="col">
+                        <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                        <div class="card">
+                            <h2 class="card-title">
+                                Pull image from docker Hub
+                            </h2>
+                            <form action="/cgi-bin/docker.py" method="get" class="w-400 mw-full">
+                                <div class="form-group">
+                                    You can go to dockerhub get the desired image
+                                    <label for="" class="required">Enter the image name</label>
+                                    <input type="text" name="pullImageName" class="form-control" id="" placeholder="" required="required">
+                                    <label for="" class="">Enter the version</label>
+                                    <input type="text" name="version" class="form-control" id="" placeholder="">
+                                </div>
+                                <button class="btn btn-primary" name="btn" value="pullImages" type="submit">Pull</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                        <div class="card">
+                            <h2 class="card-title">
+                                Launch a new container
+                            </h2>
+                            <form action="/cgi-bin/docker.py" method="get" class="w-400 mw-full">
+                                <div class="form-group">
+                                    <label for="launchImageContName" class="required">Name of new container</label>
+                                    <input type="text" name="launchImageContName" class="form-control" id=""
+                                        placeholder="" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="launchImageName" class="required">Enter the image name</label>
+                                    <input type="text" name="launchImageName" class="form-control" id="" placeholder=""
+                                        required="required">
+                                </div>
+                                <button class="btn btn-primary" name="btn" value="launchContainer" type="submit">Launch Container</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                        <div class="card">
+                            <h2 class="card-title">
+                                Create your own Container Image
+                            </h2>
+                            <form action="/cgi-bin/docker.py" method="get" class="w-400 mw-full">
+                                <div class="form-group">
+                                    <label for="contName" class="required">Enter the container name from which image is to be created</label>
+                                    <input type="text" name="contName" class="form-control" id="" placeholder=""
+                                        required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newContName" class="required">Enter the new name of image</label>
+                                    <input type="text" name="launchImageName" class="form-control" id="" placeholder=""
+                                        required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newTagName" class="required">Enter tagname/version name</label>
+                                    <input type="text" name="newTagName" class="form-control" id="" placeholder=""
+                                        required="required">
+                                </div>
+                                <button class="btn btn-primary" name="btn" value="createImage" type="submit">Create Image</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                            <div class="card">
+                                <h2 class="card-title">
+                                    Start the container
+                                </h2>
+                                <form action="/cgi-bin/docker.py" method="get" class="w-400 mw-full">
+                                    <div class="form-group">
+                                        <label for="startContainer" class="required">Enter the container name</label>
+                                        <input type="text" name="startContainer" class="form-control" id=""
+                                            placeholder="" required="required">
+                                    </div>
+                                    <button class="btn btn-primary" name="btn" value="startContainer" type="submit">Launch Container</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                            <div class="card">
+                                <h2 class="card-title">
+                                    Stop container
+                                </h2>
+                                <form action="/cgi-bin/docker.py" method="get" class="w-400 mw-full">
+                                    <div class="form-group">
+                                        <label for="" class="required">Enter name of container to stop</label>
+                                        <input type="text" name="stopContainer" class="form-control" id=""
+                                            placeholder="" required="required">
+                                    </div>
+                                    <button class="btn btn-primary" name="btn" value="stopContainer" type="submit">Stop Container</button>
+
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                            <div class="card">
+                                <h2 class="card-title">
+                                    Remove an image or all images
+                                </h2>
+                                <form action="/cgi-bin/docker.py" method="get" class="w-400 mw-full">
+                                    <div class="form-group">
+                                        <label for="" class="required">Enter the name of Image . If you want to delete all, type 'all' ! </label>
+                                        <input type="text" name="delImage" class="form-control" id=""
+                                            placeholder="" required="required">
+                                    </div>
+                                    <button class="btn btn-primary" name="btn" value="remImage" type="submit">Remove Image</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row">
+                            <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                            <div class="card">
+                                <h2 class="card-title">
+                                    Remove a Container
+                                </h2>
+                                <form action="/cgi-bin/docker.py" method="get" class="w-400 mw-full">
+                                    <div class="form-group">
+                                        <label for="" class="required">Enter the name of container . If you want to delete all, type 'all' ! </label>
+                                        <input type="text" name="remContName" class="form-control" id="" placeholder=""
+                                            required="required">
+                                    </div>
+                                    <button class="btn btn-primary" name="btn" value="remContainer" type="submit">Remove Container</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Content wrapper end -->
+
+    </div>
+    <!-- Page wrapper end -->
+
+    <!-- Halfmoon JS -->
+    <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+</body>
+
+</html>
