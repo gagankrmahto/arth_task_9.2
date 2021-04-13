@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width" />
 
     <!-- Favicon and title -->
-    <link rel="icon" href="path/to/fav.png">
+    <link rel="icon" href="/fav.png">
     <title>Hadoop WebUI</title>
 
     <!-- Halfmoon CSS -->
@@ -50,23 +50,30 @@
                 <div class="sidebar">
                     <div class="sidebar-menu">
                         <!-- Sidebar brand -->
-                        <a href="#" class="sidebar-brand">
+                        <a href="/" class="sidebar-brand">
                             <!-- <img src="..." alt="..."> -->
-                            Hadoop
+                            iSmart WebUI
                         </a>
                         <!-- Sidebar content with the search box -->
+                        <div class="sidebar-content">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <div class="mt-10 font-size-12">
+                                <!-- mt-10 = margin-top: 1rem (10px), font-size-12 = font-size: 1.2rem (12px) -->
+                                Press <kbd>/</kbd> to focus
+                            </div>
+                        </div>
                         <!-- Sidebar links and titles -->
-                        <h5 class="sidebar-title">Getting started</h5>
+                        <h2 class="sidebar-title"><a href="#" class="sidebar-link">Hadoop WebUI</a></h2>
+
                         <div class="sidebar-divider"></div>
-                        <a href="#" class="sidebar-link active">Installation</a>
                         <a href="#" class="sidebar-link">Setup Hadooop</a>
-                        <br />
+                    
                         <h5 class="sidebar-title"></h5>
                         <div class="sidebar-divider"></div>
+
                         <a href="#" class="sidebar-link">Setup Namenode</a>
                         <a href="#" class="sidebar-link">Setup DataNode</a>
                         <a href="#" class="sidebar-link">Attach Storage</a>
-                        <a href="#" class="sidebar-link">Go to Web UI</a>
                     </div>
                 </div>
 

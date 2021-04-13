@@ -29,8 +29,8 @@ gpgcheck=0
     print("<h2<br>#### Started Docker Services ####</h2><br>")
 
 if btn == "enableDocker":
-    print("Services are permanent now ")
     print(getoutput("sudo systemctl enable docker"))
+    print("Services are permanent now ")
 
 if btn == "dockerStatus":
     print(getoutput('sudo systemctl status docker'))

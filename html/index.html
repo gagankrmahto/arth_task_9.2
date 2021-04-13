@@ -63,15 +63,9 @@
                 <li class="nav-item">
                     <a href="/lvm.html" class="nav-link">LVM</a>
                 </li>
+
             </ul>
             <!-- Navbar form (inline form) -->
-            <div class="position-absolute top-0 right-0 z-10 p-10">
-                <!-- position-absolute = position: absolute, top-0 = top: 0, right-0 = right: 0, z-10 = z-index: 10, p-10 = padding: 1rem (10px) -->
-                <button class="btn btn-square" type="button" onclick="halfmoon.toggleDarkMode()">
-                    <i class="fa fa-moon-o" aria-hidden="true"></i>
-                    <span class="sr-only">Toggle dark mode</span> <!-- sr-only = only for screen readers -->
-                </button>
-            </div>
             <!-- Navbar content (with the dropdown menu) -->
             <div class="navbar-content d-md-none ml-auto">
                 <!-- d-md-none = display: none on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
@@ -97,7 +91,7 @@
 
                 <center>
 
-                    <form action="http://192.168.43.52/cgi-bin/cmd.py">
+                    <form action="/cgi-bin/cmd.py">
                         
 
                             <label for="inp" class="inp row">

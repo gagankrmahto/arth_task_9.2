@@ -15,7 +15,7 @@ print("</pre>")
 home="""
 
 <div class="col-md-6">
-    <a href="http://192.168.43.52/">Home</a>
+    <a href="/">Home</a>
   </div>
 
 
